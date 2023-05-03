@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
-const Computers = () => {
+const Computers = ( { isMobile }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf') 
   return (
     <mesh>
@@ -21,8 +21,8 @@ const Computers = () => {
       />
       <primitive 
         object={computer.scene}
-        scale={0.75}
-        position={[0, -3.25, -1.5]} //pour bien positionner l'objet 3d
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]} //pour bien positionner l'objet 3d
         rotation={[-0.01, -0.2, -0.1]}  //pour une rotation plus douce
       />
     </mesh>
@@ -31,6 +31,25 @@ const Computers = () => {
 }
 
 const ComputersCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    //Ajout d'un eventListener pour les changement de taille d'écran
+    const mediaQuery = window.matchMedia('(max-width:500)');
+    //on initialise la valeur initiale de la variable 'isMobile'
+    setIsMobile(mediaQuery.matches);
+    //on définie une fonction callback pour manipuler les changement de mediaQueries
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(eveent.matches);
+    }
+    //on ajoute une fonction callback comme listener des changement de media query
+    mediaQuery;addEventListener('change', handleMediaQueryChange)
+    //on retire l'écouteur quand le component est démonté
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    }
+  }, [])
+
   return(
     <Canvas
     frameloop='demand'
@@ -44,7 +63,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI /2}
           minPolarAngle={Math.PI /2}
         />
-        <Computers />
+        <Computers isMobile={isMobile}/>
       </Suspense>
 
       <Preload all/>
