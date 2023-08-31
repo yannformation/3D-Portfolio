@@ -1,17 +1,15 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
-
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
-
-import CanvasLoader from '../Loader';
-
+import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
+
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <hemisphereLight intensity={0.15} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -20,17 +18,16 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={1}/>
-      <primitive 
+      <pointLight intensity={1} />
+      <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]} //pour bien positionner l'objet 3d
-        rotation={[-0.01, -0.2, -0.1]}  //pour une rotation plus douce
+        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
-
-  )
-}
+  );
+};
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -38,42 +35,44 @@ const ComputersCanvas = () => {
   useEffect(() => {
     //Ajout d'un eventListener pour les changement de taille d'écran
     const mediaQuery = window.matchMedia("(max-width: 500px)");
+
     //on initialise la valeur initiale de la variable 'isMobile'
     setIsMobile(mediaQuery.matches);
+
     //on définie une fonction callback pour manipuler les changement de mediaQueries
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
-    }
+    };
+
     //on ajoute une fonction callback comme listener des changement de media query
-    mediaQuery.addEventListener('change', handleMediaQueryChange)
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
     //on retire l'écouteur quand le component est démonté
     return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    }
-  }, [])
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
 
-  return(
+  return (
     <Canvas
-    frameloop='demand'
-    shadows
-    dpr= {[1, 2]}
-    camera={{position: [20, 3, 5], fov:25}}
-    gl={{preserveDrawingBuffer: true}}
+      frameloop='demand'
+      shadows
+      dpr={[1, 2]}
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls 
+        <OrbitControls
           enableZoom={false}
-          maxPolarAngle={Math.PI /2}
-          minPolarAngle={Math.PI /2}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile}/>
+        <Computers isMobile={isMobile} />
       </Suspense>
 
       <Preload all />
-
     </Canvas>
-  )
-}
-// pour réussir l'import de l'objet 3D il ne faut pas oublier d'importer Three.js via npm en faisant =>
-// npm install  --legacy-peer-deps three
+  );
+};
+// pour réussir l'import de l'objet 3D il ne faut pas oublier d'importer Three.js via npm en faisant => npm install  --legacy-peer-deps three
 export default ComputersCanvas

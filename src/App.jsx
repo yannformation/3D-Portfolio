@@ -12,9 +12,9 @@ import {
   Works,
   StarsCanvas,
   Footer,
-  Consentment,
 } from "./components";
 import Privacy from "../src/components/pages/Privacy";
+import Consentment from "../src/components/pages/Consentment";
 
 // Structure de notre site
 const App = () => {
@@ -26,13 +26,13 @@ const App = () => {
     }, [])
   return (
     <div className="relative z-0 bg-primary">
+        <Navbar />
       <Routes>
         <Route
           path="/"
           element={
             <>
               <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                <Navbar />
                 <Hero />
               </div>
               <About />
@@ -50,9 +50,7 @@ const App = () => {
         />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/consentment" element={<Consentment />} />
-      
       </Routes>
-
       <Footer />
     </div>
   );
