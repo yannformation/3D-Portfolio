@@ -8,31 +8,26 @@ import {
     html,
     css,
     reactjs,
-    redux,
     tailwind,
-    nodejs,
-    mongodb,
     git,
     figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
+    fenix,
+    monLogo,
+    ateam,
+    metaversus,
+    ACJoie,
+    sushiman,
     threejs,
   } from "../assets";
   
   export const navLinks = [
     {
       id: "about",
-      title: "About",
+      title: "A propos",
     },
     {
       id: "work",
-      title: "Work",
+      title: "Expérience",
     },
     {
       id: "contact",
@@ -42,129 +37,129 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "Développeur web",
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "Développeur React",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "Développeur Three.js",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Créateur de visuels",
       icon: creator,
     },
   ];
   
   const technologies = [
     {
-      name: "HTML 5",
+      id: "HTML5",
       icon: html,
     },
     {
-      name: "CSS 3",
+      id: "CSS3",
       icon: css,
     },
     {
-      name: "JavaScript",
+      id: "JavaScript",
       icon: javascript,
     },
     {
-      name: "TypeScript",
+      id: "TypeScript",
       icon: typescript,
     },
     {
-      name: "React JS",
+      id: "ReactJS",
       icon: reactjs,
     },
+    // {
+    //   name: "Redux Toolkit",
+    //   icon: redux,
+    // },
     {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
-      name: "Tailwind CSS",
+      id: "TailwindCSS",
       icon: tailwind,
     },
+    // {
+    //   name: "Node JS",
+    //   icon: nodejs,
+    // },
+    // {
+    //   name: "MongoDB",
+    //   icon: mongodb,
+    // },
     {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
+      id: "ThreeJS",
       icon: threejs,
     },
     {
-      name: "git",
+      id: "git",
       icon: git,
     },
     {
-      name: "figma",
+      id: "figma",
       icon: figma,
     },
-    {
-      name: "docker",
-      icon: docker,
-    },
+    // {
+    //   name: "docker",
+    //   icon: docker,
+    // },
   ];
   
   const experiences = [
+    // {
+    //   title: "React.js Developer",
+    //   company_name: "Starbucks",
+    //   icon: starbucks,
+    //   iconBg: "#383E56",
+    //   date: "March 2020 - April 2021",
+    //   points: [
+    //     "Developing and maintaining web applications using React.js and other related technologies.",
+    //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    //     "Implementing responsive design and ensuring cross-browser compatibility.",
+    //     "Participating in code reviews and providing constructive feedback to other developers.",
+    //   ],
+    // },
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      title: "Intégrateur web",
+      company_name: "Fenix",
+      icon: fenix,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "Jan 2021 - Oct 2021",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Concevoir des contenus visuels pour le web et les réseaux sociaux : communications interactives, animations, bannières web.",
+        " Création et Intégration des maquettes et chartes graphiques dans tout type d’environnement.",
+        "Mettre en œuvre un 'responsive design' et assurer la compatibilité entre les différents navigateurs..",
+        "Participer aux révisions de code et donner des commentaires constructifs aux autres développeurs.",
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
+      title: "Développeur web",
+      company_name: "A-Team",
+      icon: ateam,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "Oct 2021 - Sept 2022",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Participer à la conception, au développement et à la mise en œuvre de nouvelles fonctionnalités pour les applications web et mobiles. ( Principalement sur Wordpress).",
+        "Collaborer avec l'équipe pour résoudre les problèmes techniques, optimiser les performances et améliorer l'expérience utilisateur.",
+        "Participer aux revues de code et aux sessions de débogage pour garantir la qualité du code.",
+        "Effectuer une veille technologique pour rester à jour avec les dernières tendances et les meilleures pratiques de développement.",
       ],
     },
     {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+      title: "Développeur Freelance",
+      company_name: "Yann",
+      icon: monLogo,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "Oct 2022 - Aujourd'hui",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Créer et développer des objets, des visuels 3D pour le web",
+        "Créer des maquettes en suivant la charte graphique et les souhaits des clients.",
+        "Implémenter les sites web en respectant les maquettes, rendre ces sites compatibles avec les différentes tailles d'écran et navigateurs.",
+        "Curieux de nature, je m'intéresse aux nouvelles technologies afin d'apporter aux clients créativité et inventivité.",
       ],
     },
   ];
@@ -172,24 +167,24 @@ import {
   const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
+        "Je croyais qu'il était impossible de créer un site aussi beau que le notre, mais Yann m'a prouvé le contraire.",
+      name: "Christine Besnard",
       designation: "CFO",
       company: "Acme Co",
       image: "https://randomuser.me/api/portraits/women/4.jpg",
     },
     {
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
+        "Je n’ai jamais rencontré un développeur web qui se soucie vraiment du succès de ses clients comme Yann.",
+      name: "jean-Baptiste Larcher",
       designation: "COO",
       company: "DEF Corp",
       image: "https://randomuser.me/api/portraits/men/5.jpg",
     },
     {
       testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
+        "Après que Yann ait optimisé notre site Web, notre trafic a augmenté de 50 %. Nous ne saurions trop le remercier!",
+      name: "Sylvie Hoareau",
       designation: "CTO",
       company: "456 Enterprises",
       image: "https://randomuser.me/api/portraits/women/6.jpg",
@@ -198,58 +193,37 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "METAVERSUS",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Une application pour démontrer la puissance de Next.js 13, ainsi que ma créativté, mon inventivité. J'ai pris beaucoup de plaisir à créer cette petite application.",
       tags: [
         {
-          name: "react",
+          name: "Next.js",
           color: "blue-text-gradient",
         },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
+        // {
+        //   name: "mongodb",
+        //   color: "green-text-gradient",
+        // },
         {
           name: "tailwind",
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: metaversus,
+      source_code_link: "https://metaversus-madness-nu.vercel.app/",
     },
     {
-      name: "Job IT",
+      name: "A Cœur Joie ",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Un site pour l'association 'À Cœur Joie - Pôle Ile-de-France.' Une association qui promeut le chant choral, qui réunit amateurs et professionnels de tous âges.",
       tags: [
         {
-          name: "react",
+          name: "Wordpress",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
+          name: "Javascript",
           color: "green-text-gradient",
         },
         {
@@ -257,8 +231,29 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: ACJoie,
+      source_code_link: "https://www.chorales-idf.org/",
+    },
+    {
+      name: "Sushiman",
+      description:
+        "Un beau site, avec un design UI/UX moderne et très plaisant, de belles animations très fluides, pour un restaurant de Sushis Japonais.",
+      tags: [
+        {
+          name: "javascript",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "html",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: sushiman,
+      source_code_link: "https://sushiman-rho.vercel.app/",
     },
   ];
   

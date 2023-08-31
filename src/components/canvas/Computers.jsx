@@ -1,16 +1,17 @@
-import React, { Suspense, useEffect, useState} from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
-const Computers = ( { isMobile }) => {
-  const computer = useGLTF('./desktop_pc/scene.gltf') 
+
+const Computers = ({ isMobile }) => {
+  const computer = useGLTF("./desktop_pc/scene.gltf");
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1}/>
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -19,6 +20,7 @@ const Computers = ( { isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
+      <pointLight intensity={1}/>
       <primitive 
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
@@ -35,15 +37,15 @@ const ComputersCanvas = () => {
 
   useEffect(() => {
     //Ajout d'un eventListener pour les changement de taille d'écran
-    const mediaQuery = window.matchMedia('(max-width:500)');
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
     //on initialise la valeur initiale de la variable 'isMobile'
     setIsMobile(mediaQuery.matches);
     //on définie une fonction callback pour manipuler les changement de mediaQueries
     const handleMediaQueryChange = (event) => {
-      setIsMobile(eveent.matches);
+      setIsMobile(event.matches);
     }
     //on ajoute une fonction callback comme listener des changement de media query
-    mediaQuery;addEventListener('change', handleMediaQueryChange)
+    mediaQuery.addEventListener('change', handleMediaQueryChange)
     //on retire l'écouteur quand le component est démonté
     return () => {
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
@@ -54,6 +56,7 @@ const ComputersCanvas = () => {
     <Canvas
     frameloop='demand'
     shadows
+    dpr= {[1, 2]}
     camera={{position: [20, 3, 5], fov:25}}
     gl={{preserveDrawingBuffer: true}}
     >
@@ -66,7 +69,7 @@ const ComputersCanvas = () => {
         <Computers isMobile={isMobile}/>
       </Suspense>
 
-      <Preload all/>
+      <Preload all />
 
     </Canvas>
   )

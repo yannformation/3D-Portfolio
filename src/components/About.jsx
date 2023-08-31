@@ -37,16 +37,16 @@ const About = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>Présentation.</h2>
       </motion.div>
 
       <motion.p variants={fadeIn("", "", 0.1, 1)}
       className='mt-4 text-secondarytext-[17px] max-w-3xl leading-[30px]'>
-        I'm skilled softwae developer with experience in TypeScript and JavaScript, and expertise in frameworks like react, Node.js and Three.js. I'm quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. let's work together to bring your ideas to life !
+        Je suis un développeur de site web qualifié avec une expérience en JavaScript, et une expertise dans les frameworks comme React et Three.js. J’apprends rapidement et je collabore étroitement avec les clients pour créer des solutions efficaces, évolutives et conviviales qui résolvent des problèmes réels. Travaillons ensemble pour concrétiser vos idées !
       </motion.p>
 
       {/* pour déployer les cartes */}
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex flex-wrap justify-center gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

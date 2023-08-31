@@ -1,4 +1,5 @@
-import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import React, { useEffect } from 'react';
 
 import {
   About,
@@ -10,31 +11,50 @@ import {
   Navbar,
   Works,
   StarsCanvas,
+  Footer,
+  Consentment,
 } from "./components";
+import Privacy from "../src/components/pages/Privacy";
 
 // Structure de notre site
 const App = () => {
+  useEffect(() => {
+    var _mtm = window._mtm = window._mtm || [];
+            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src='https://yanndev-art.fr/analytics/js/container_hOUYnEz9.js'; s.parentNode.insertBefore(g,s);
+    }, [])
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">  
-          <Navbar />
-          <Hero />
-        </div>
+    <div className="relative z-0 bg-primary">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+                <Navbar />
+                <Hero />
+              </div>
+              <About />
+              <Experience />
+              <Tech />
+              <Works />
+              <Feedbacks />
 
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
+              <div className="relative z-0">
+                <Contact />
+                <StarsCanvas />
+              </div>
+            </>
+          }
+        />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/consentment" element={<Consentment />} />
+      
+      </Routes>
 
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 };
 

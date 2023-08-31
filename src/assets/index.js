@@ -21,14 +21,14 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import fenix from "./company/fenix.png";
+import monLogo from "./company/monLogo.png";
+import ateam from "./company/ateam.png";
+
+import metaversus from "./metaversus.png";
+import ACJoie from "./ACJoie.webp";
+import sushiman from "./sushiman.webp";
 
 export {
   logo,
@@ -40,23 +40,19 @@ export {
   menu,
   close,
   css,
-  docker,
   figma,
   git,
   html,
   javascript,
-  mongodb,
-  nodejs,
   reactjs,
-  redux,
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+
+  fenix,
+  monLogo,
+  ateam,
+  metaversus,
+  ACJoie,
+  sushiman,
 };
